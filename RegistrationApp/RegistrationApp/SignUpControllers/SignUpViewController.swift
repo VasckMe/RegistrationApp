@@ -9,23 +9,26 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
-    @IBOutlet weak var emailTF: UITextField!
-    @IBOutlet weak var nameTF: UITextField!
-    @IBOutlet weak var passwordTF: UITextField!
-    @IBOutlet weak var confirmPassTF: UITextField!
-    @IBOutlet weak var passRedView: UIView!
-    @IBOutlet weak var passOrangeView: UIView!
-    @IBOutlet weak var passYellowView: UIView!
-    @IBOutlet weak var passGreenView: UIView!
+    @IBOutlet weak private var emailTF: UITextField!
+    @IBOutlet weak private var nameTF: UITextField!
+    @IBOutlet weak private var passwordTF: UITextField!
+    @IBOutlet weak private var confirmPassTF: UITextField!
+    
+    @IBOutlet weak private var passRedView: UIView!
+    @IBOutlet weak private var passOrangeView: UIView!
+    @IBOutlet weak private var passYellowView: UIView!
+    @IBOutlet weak private var passGreenView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    
-    @IBAction func passCheck(_ sender: Any) {
+    @IBAction func emailCheck() {
     }
     
-    @IBAction func confirmPassCheck(_ sender: Any) {
+    @IBAction func passCheck() {
+    }
+    
+    @IBAction func confirmPassCheck() {
     }
 }

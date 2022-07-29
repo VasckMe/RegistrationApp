@@ -9,19 +9,22 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var wrongEmailLbl: UILabel!
-    @IBOutlet weak var passTextField: UITextField!
-    @IBOutlet weak var wrongPassLbl: UILabel!
-    @IBOutlet weak var showPassLbl: UIButton!
+    @IBOutlet weak private var emailTextField: UITextField!
+    @IBOutlet weak private var wrongEmailLbl: UILabel!
+    @IBOutlet weak private var passTextField: UITextField!
+    @IBOutlet weak private var wrongPassLbl: UILabel!
+    @IBOutlet weak private var showPassLbl: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-    
-    @IBAction func showPassButton(_ sender: Any) {
+    @IBAction func checkEmail() {
     }
-    @IBAction func signInButton(_ sender: Any) {
+    
+    @IBAction func showPassButton() {
+        
+    }
+    @IBAction func signInButton() {
     }
 }

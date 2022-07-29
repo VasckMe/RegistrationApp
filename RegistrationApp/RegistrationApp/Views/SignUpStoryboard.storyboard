@@ -44,6 +44,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                                                <connections>
+                                                                    <action selector="emailCheck" destination="Y6W-OH-hqX" eventType="editingChanged" id="Vmc-o2-NBd"/>
+                                                                </connections>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verifycation code will send you on your email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43U-z3-ONL">
                                                                 <rect key="frame" x="0.0" y="42" width="364" height="20.5"/>
@@ -78,7 +81,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                                                 <connections>
-                                                                    <action selector="passCheck:" destination="Y6W-OH-hqX" eventType="editingChanged" id="J2i-Oh-ZBY"/>
+                                                                    <action selector="passCheck" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="atY-Kz-WCf"/>
                                                                 </connections>
                                                             </textField>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your password in too easy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2G-Ma-0qq">
@@ -129,7 +132,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="password"/>
                                                         <connections>
-                                                            <action selector="confirmPassCheck:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="OKF-yf-GjZ"/>
+                                                            <action selector="confirmPassCheck" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="VYe-Yl-26X"/>
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcV-jJ-q0I">
@@ -211,7 +214,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="codeCheck:" destination="Smg-cC-MIb" eventType="editingDidEnd" id="eav-Zc-Xwq"/>
+                                            <action selector="codeCheck" destination="Smg-cC-MIb" eventType="editingDidEnd" id="wiE-Cv-H1e"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We sent you special code on your email address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srD-Zc-1OZ">
