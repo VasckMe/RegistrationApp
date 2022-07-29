@@ -139,7 +139,7 @@
                                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="32"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <segue destination="Smg-cC-MIb" kind="show" id="Tbe-Xd-ig4"/>
+                                                            <segue destination="Smg-cC-MIb" kind="presentation" id="Tbe-Xd-ig4"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -236,14 +236,65 @@
                     <connections>
                         <outlet property="codeTF" destination="75T-xk-FU0" id="00z-E0-bW8"/>
                         <outlet property="helpLbl" destination="srD-Zc-1OZ" id="0Iu-9A-UiN"/>
+                        <segue destination="6Gq-zg-CJf" kind="presentation" identifier="GoToWelcomeVC" id="PIp-ee-eK7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpX-y0-S6Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="692.75362318840587" y="65.625"/>
         </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="lER-Tv-orN">
+            <objects>
+                <viewController id="6Gq-zg-CJf" customClass="WelcomeViewController" customModule="RegistrationApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gW8-hz-IGD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="HvB-uw-wsw">
+                                <rect key="frame" x="25" y="144" width="364" height="367"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWo-JQ-mJf">
+                                        <rect key="frame" x="43" y="0.0" width="278.5" height="79.5"/>
+                                        <color key="tintColor" red="1" green="0.86875027250000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="61"/>
+                                        <color key="textColor" red="1" green="0.0187217119" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have signed up succesfully. Select the option below to stay for updated with upcoming features and promotions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RL-Ct-y1Q">
+                                        <rect key="frame" x="6" y="139.5" width="352.5" height="105.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btl-3W-Ea2">
+                                        <rect key="frame" x="85" y="305" width="194" height="62"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Continue">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="40"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="17x-Kc-7zF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HvB-uw-wsw" firstAttribute="leading" secondItem="17x-Kc-7zF" secondAttribute="leading" constant="25" id="6xK-mP-uaC"/>
+                            <constraint firstItem="HvB-uw-wsw" firstAttribute="top" secondItem="17x-Kc-7zF" secondAttribute="top" constant="100" id="KJo-st-B78"/>
+                            <constraint firstAttribute="trailing" secondItem="HvB-uw-wsw" secondAttribute="trailing" constant="25" id="UfM-EL-qQ2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G26-Km-Wz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1429" y="66"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -17,6 +17,7 @@
 		182FAD5B2893E90C0062D3CA /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182FAD5A2893E90C0062D3CA /* SignUpStoryboard.storyboard */; };
 		182FAD5D2893E9430062D3CA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD5C2893E9430062D3CA /* SignUpViewController.swift */; };
 		182FAD5F2893F98B0062D3CA /* VerifycationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD5E2893F98B0062D3CA /* VerifycationViewController.swift */; };
+		182FAD61289403B10062D3CA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD60289403B10062D3CA /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		182FAD5A2893E90C0062D3CA /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
 		182FAD5C2893E9430062D3CA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		182FAD5E2893F98B0062D3CA /* VerifycationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifycationViewController.swift; sourceTree = "<group>"; };
+		182FAD60289403B10062D3CA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				182FAD5C2893E9430062D3CA /* SignUpViewController.swift */,
 				182FAD5E2893F98B0062D3CA /* VerifycationViewController.swift */,
+				182FAD60289403B10062D3CA /* WelcomeViewController.swift */,
 			);
 			path = SignUpControllers;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				182FAD3F2893E7360062D3CA /* AppDelegate.swift in Sources */,
 				182FAD5F2893F98B0062D3CA /* VerifycationViewController.swift in Sources */,
 				182FAD412893E7360062D3CA /* SceneDelegate.swift in Sources */,
+				182FAD61289403B10062D3CA /* WelcomeViewController.swift in Sources */,
 				182FAD5D2893E9430062D3CA /* SignUpViewController.swift in Sources */,
 				182FAD572893E8E40062D3CA /* SignInViewController.swift in Sources */,
 			);
