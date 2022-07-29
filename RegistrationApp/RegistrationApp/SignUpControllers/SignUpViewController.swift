@@ -9,21 +9,23 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var confirmPassTF: UITextField!
+    @IBOutlet weak var passRedView: UIView!
+    @IBOutlet weak var passOrangeView: UIView!
+    @IBOutlet weak var passYellowView: UIView!
+    @IBOutlet weak var passGreenView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func passCheck(_ sender: Any) {
     }
-    */
-
+    
+    @IBAction func confirmPassCheck(_ sender: Any) {
+    }
 }

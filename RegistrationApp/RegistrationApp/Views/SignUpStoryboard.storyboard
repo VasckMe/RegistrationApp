@@ -77,6 +77,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                                <connections>
+                                                                    <action selector="passCheck:" destination="Y6W-OH-hqX" eventType="editingChanged" id="J2i-Oh-ZBY"/>
+                                                                </connections>
                                                             </textField>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your password in too easy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2G-Ma-0qq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="0.0"/>
@@ -125,6 +128,9 @@
                                                         <rect key="frame" x="0.0" y="525" width="364" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="confirmPassCheck:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="OKF-yf-GjZ"/>
+                                                        </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcV-jJ-q0I">
                                                         <rect key="frame" x="0.0" y="583" width="364" height="52.5"/>
@@ -168,6 +174,16 @@
                             <constraint firstItem="qeI-de-Svv" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="u2D-LF-4yV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPassTF" destination="kmc-o9-Dqp" id="uaX-BL-Xs2"/>
+                        <outlet property="emailTF" destination="Wy2-G1-cB3" id="h8B-hH-JTA"/>
+                        <outlet property="nameTF" destination="Cj6-P8-yv3" id="pGi-0c-Fcx"/>
+                        <outlet property="passGreenView" destination="RcP-Yv-Dfe" id="iHt-Hl-dXq"/>
+                        <outlet property="passOrangeView" destination="8Eo-ua-THy" id="rbd-zh-NIi"/>
+                        <outlet property="passRedView" destination="T2L-r3-G6E" id="gAR-kd-M99"/>
+                        <outlet property="passYellowView" destination="LAe-OI-kmz" id="0nj-JF-h3A"/>
+                        <outlet property="passwordTF" destination="inA-Ke-oGi" id="weD-5q-4uj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
