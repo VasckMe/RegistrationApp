@@ -8,23 +8,29 @@
 import UIKit
 
 class SignInViewController: UIViewController {
+    @IBOutlet private var emailTextField: UITextField!
+    @IBOutlet private var wrongEmailLbl: UILabel!
+    @IBOutlet private var passTextField: UITextField!
+    @IBOutlet private var wrongPassLbl: UILabel!
+    @IBOutlet private var showPassLbl: UIButton!
 
-    @IBOutlet weak private var emailTextField: UITextField!
-    @IBOutlet weak private var wrongEmailLbl: UILabel!
-    @IBOutlet weak private var passTextField: UITextField!
-    @IBOutlet weak private var wrongPassLbl: UILabel!
-    @IBOutlet weak private var showPassLbl: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    @IBAction func checkEmail() {
-    }
-    
+
+    @IBAction func checkEmail() {}
+    @IBAction func checkPassword() {}
+
     @IBAction func showPassButton() {
-        
+        switch passTextField.isSecureTextEntry {
+            case true:
+                showPassLbl.setTitle("hide password", for: .normal)
+                passTextField.isSecureTextEntry.toggle()
+            case false:
+                showPassLbl.setTitle("show password", for: .normal)
+                passTextField.isSecureTextEntry.toggle()
+        }
     }
-    @IBAction func signInButton() {
-    }
+
+    @IBAction func signInButton() {}
 }
