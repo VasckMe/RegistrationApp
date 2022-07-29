@@ -9,13 +9,18 @@ import UIKit
 
 class VerifycationViewController: UIViewController {
 
+    @IBOutlet weak var codeTF: UITextField!
+    @IBOutlet weak var helpLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func codeCheck(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

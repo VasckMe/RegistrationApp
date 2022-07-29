@@ -210,6 +210,9 @@
                                         <rect key="frame" x="0.0" y="154.5" width="364" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="codeCheck:" destination="Smg-cC-MIb" eventType="editingDidEnd" id="eav-Zc-Xwq"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We sent you special code on your email address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srD-Zc-1OZ">
                                         <rect key="frame" x="0.0" y="218.5" width="364" height="41"/>
@@ -230,6 +233,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Js-S4-Prj"/>
+                    <connections>
+                        <outlet property="codeTF" destination="75T-xk-FU0" id="00z-E0-bW8"/>
+                        <outlet property="helpLbl" destination="srD-Zc-1OZ" id="0Iu-9A-UiN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpX-y0-S6Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
