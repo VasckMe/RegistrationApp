@@ -12,13 +12,17 @@ class VerifycationViewController: UIViewController {
     @IBOutlet weak var codeTF: UITextField!
     @IBOutlet weak var helpLbl: UILabel!
     
+    var accountData: Account?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
     @IBAction func codeCheck() {
+        if codeTF.text == "1" {
+            performSegue(withIdentifier: "GoToWelcomeVC", sender: nil)
+        }
     }
     
     /*
