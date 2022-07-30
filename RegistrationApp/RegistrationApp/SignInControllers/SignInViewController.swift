@@ -49,6 +49,12 @@ class SignInViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func unwindToRoot(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
+    }
+    
     //MARK: Functions
     private func showError(showEmailError email: Bool!, showPassError password: Bool!) {
         if let emailBool = email { wrongEmailLbl.isHidden = !emailBool}

@@ -88,6 +88,14 @@ class SignUpViewController: UIViewController {
         return difficult
     }
 
+    @IBAction func signIn() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @IBAction func signUp() {
+        performSegue(withIdentifier: "GoToVerifyVC", sender: nil)
+    }
+
     private func clearPasswordLight() {
         passRedView.alpha = isOff
         passOrangeView.alpha = isOff

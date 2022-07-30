@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qeI-de-Svv">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="99" width="414" height="763"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMz-QY-T5V">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="660.5"/>
@@ -142,7 +142,7 @@
                                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="32"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <segue destination="Smg-cC-MIb" kind="presentation" id="Tbe-Xd-ig4"/>
+                                                            <action selector="signUp" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Re8-YR-yfi"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -166,11 +166,23 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="ytx-YT-1f6"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="uG3-wJ-HnH"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3r-uw-EU1">
+                                <rect key="frame" x="279.5" y="44" width="114.5" height="50"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign In">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="signIn" destination="Y6W-OH-hqX" eventType="touchUpInside" id="u8b-dr-SQg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
-                            <constraint firstItem="qeI-de-Svv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Egj-Av-WYQ"/>
+                            <constraint firstItem="p3r-uw-EU1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="DKN-gP-H9j"/>
+                            <constraint firstItem="qeI-de-Svv" firstAttribute="top" secondItem="p3r-uw-EU1" secondAttribute="bottom" constant="5" id="Egj-Av-WYQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="p3r-uw-EU1" secondAttribute="trailing" constant="20" id="Sb9-Zc-cbg"/>
                             <constraint firstItem="BMz-QY-T5V" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="ZgL-6w-jf8"/>
                             <constraint firstItem="qeI-de-Svv" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="gka-zj-Wmh"/>
                             <constraint firstItem="qeI-de-Svv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="oXP-6B-mds"/>
@@ -186,6 +198,7 @@
                         <outlet property="passRedView" destination="T2L-r3-G6E" id="gAR-kd-M99"/>
                         <outlet property="passYellowView" destination="LAe-OI-kmz" id="0nj-JF-h3A"/>
                         <outlet property="passwordTF" destination="inA-Ke-oGi" id="weD-5q-4uj"/>
+                        <segue destination="Smg-cC-MIb" kind="presentation" identifier="GoToVerifyVC" id="F6f-ky-nJZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -214,7 +227,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="codeCheck" destination="Smg-cC-MIb" eventType="editingDidEnd" id="wiE-Cv-H1e"/>
+                                            <action selector="codeCheck" destination="Smg-cC-MIb" eventType="editingChanged" id="Q0e-14-kKE"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We sent you special code on your email address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srD-Zc-1OZ">
@@ -291,8 +304,12 @@
                             <constraint firstAttribute="trailing" secondItem="HvB-uw-wsw" secondAttribute="trailing" constant="25" id="UfM-EL-qQ2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="s1k-NO-khr" kind="unwind" identifier="unwindToRoot" unwindAction="unwindToRoot:" id="Vje-Jq-mqt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G26-Km-Wz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="s1k-NO-khr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1429" y="66"/>
         </scene>
