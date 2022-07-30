@@ -8,6 +8,8 @@
 import UIKit
 
 class SignInViewController: UIViewController {
+    
+    //MARK: IBOutlets
     @IBOutlet private var emailTextField: UITextField!
     @IBOutlet private var wrongEmailLbl: UILabel!
     @IBOutlet private var passTextField: UITextField!
@@ -18,8 +20,13 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func checkEmail() {}
-    @IBAction func checkPassword() {}
+    //MARK: IBActions
+    @IBAction func checkEmail() {
+        showError(showEmailError: false, showPassError: nil)
+    }
+    @IBAction func checkPassword() {
+        showError(showEmailError: nil, showPassError: false)
+    }
 
     @IBAction func showPassButton() {
         switch passTextField.isSecureTextEntry {
@@ -32,5 +39,19 @@ class SignInViewController: UIViewController {
         }
     }
 
-    @IBAction func signInButton() {}
+    @IBAction func signInButton() {
+        for acc in accountsData {
+            if acc.email != emailTextField.text {
+                showError(showEmailError: true, showPassError: true)
+            } else if acc.password != passTextField.text {
+                showError(showEmailError: false, showPassError: true)
+            } else { /*signing in*/}
+        }
+    }
+    
+    //MARK: Functions
+    private func showError(showEmailError email: Bool!, showPassError password: Bool!) {
+        if let emailBool = email { wrongEmailLbl.isHidden = !emailBool}
+        if let passBool = password { wrongPassLbl.isHidden = !passBool}
+    }
 }
