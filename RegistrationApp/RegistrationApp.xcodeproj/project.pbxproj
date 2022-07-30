@@ -18,6 +18,9 @@
 		182FAD5D2893E9430062D3CA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD5C2893E9430062D3CA /* SignUpViewController.swift */; };
 		182FAD5F2893F98B0062D3CA /* VerifycationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD5E2893F98B0062D3CA /* VerifycationViewController.swift */; };
 		182FAD61289403B10062D3CA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD60289403B10062D3CA /* WelcomeViewController.swift */; };
+		182FAD64289420DC0062D3CA /* PasswordDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD63289420DC0062D3CA /* PasswordDifficulty.swift */; };
+		182FAD66289425E70062D3CA /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD65289425E70062D3CA /* Account.swift */; };
+		18E9F34928954252008A0E5E /* AccountsDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F34828954252008A0E5E /* AccountsDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		182FAD5C2893E9430062D3CA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		182FAD5E2893F98B0062D3CA /* VerifycationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifycationViewController.swift; sourceTree = "<group>"; };
 		182FAD60289403B10062D3CA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		182FAD63289420DC0062D3CA /* PasswordDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDifficulty.swift; sourceTree = "<group>"; };
+		182FAD65289425E70062D3CA /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		18E9F34828954252008A0E5E /* AccountsDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 		182FAD3D2893E7360062D3CA /* RegistrationApp */ = {
 			isa = PBXGroup;
 			children = (
+				182FAD62289420B20062D3CA /* Models */,
 				182FAD542893E8770062D3CA /* SignInControllers */,
 				182FAD552893E89C0062D3CA /* SignUpControllers */,
 				182FAD522893E85F0062D3CA /* Views */,
@@ -112,6 +119,16 @@
 				182FAD60289403B10062D3CA /* WelcomeViewController.swift */,
 			);
 			path = SignUpControllers;
+			sourceTree = "<group>";
+		};
+		182FAD62289420B20062D3CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				182FAD65289425E70062D3CA /* Account.swift */,
+				182FAD63289420DC0062D3CA /* PasswordDifficulty.swift */,
+				18E9F34828954252008A0E5E /* AccountsDatabase.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +209,10 @@
 				182FAD412893E7360062D3CA /* SceneDelegate.swift in Sources */,
 				182FAD61289403B10062D3CA /* WelcomeViewController.swift in Sources */,
 				182FAD5D2893E9430062D3CA /* SignUpViewController.swift in Sources */,
+				182FAD66289425E70062D3CA /* Account.swift in Sources */,
 				182FAD572893E8E40062D3CA /* SignInViewController.swift in Sources */,
+				182FAD64289420DC0062D3CA /* PasswordDifficulty.swift in Sources */,
+				18E9F34928954252008A0E5E /* AccountsDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
