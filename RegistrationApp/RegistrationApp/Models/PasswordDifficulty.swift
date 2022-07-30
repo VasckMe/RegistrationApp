@@ -8,6 +8,7 @@
 import Foundation
 
 enum PasswordDifficulty {
+    case clear
     case veryEasy
     case easy
     case medium

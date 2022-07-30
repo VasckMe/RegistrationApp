@@ -81,7 +81,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                                                 <connections>
-                                                                    <action selector="passCheck" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="atY-Kz-WCf"/>
+                                                                    <action selector="passCheck" destination="Y6W-OH-hqX" eventType="editingChanged" id="31s-bR-csd"/>
                                                                 </connections>
                                                             </textField>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your password in too easy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2G-Ma-0qq">
@@ -95,22 +95,22 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFo-ca-wQE">
                                                         <rect key="frame" x="0.0" y="411.5" width="364" height="4.5"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2L-r3-G6E">
+                                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2L-r3-G6E">
                                                                 <rect key="frame" x="0.0" y="0.0" width="91" height="4.5"/>
                                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="T2L-r3-G6E" secondAttribute="height" multiplier="20:1" id="gOP-MZ-b12"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Eo-ua-THy">
+                                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Eo-ua-THy">
                                                                 <rect key="frame" x="91" y="0.0" width="91" height="4.5"/>
                                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAe-OI-kmz">
+                                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAe-OI-kmz">
                                                                 <rect key="frame" x="182" y="0.0" width="91" height="4.5"/>
                                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcP-Yv-Dfe">
+                                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcP-Yv-Dfe">
                                                                 <rect key="frame" x="273" y="0.0" width="91" height="4.5"/>
                                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                             </view>
@@ -132,7 +132,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="password"/>
                                                         <connections>
-                                                            <action selector="confirmPassCheck" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="VYe-Yl-26X"/>
+                                                            <action selector="confirmPassCheck" destination="Y6W-OH-hqX" eventType="editingChanged" id="B4h-g7-voO"/>
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcV-jJ-q0I">
