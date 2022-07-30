@@ -40,7 +40,7 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func signInButton() {
-        for acc in accountsData {
+        for acc in accountsDatabase {
             if acc.email != emailTextField.text {
                 showError(showEmailError: true, showPassError: true)
             } else if acc.password != passTextField.text {

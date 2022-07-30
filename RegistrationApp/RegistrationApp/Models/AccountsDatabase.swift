@@ -7,4 +7,4 @@
 
 import Foundation
 
-var accountsData: [Account] = []
+var accountsDatabase: [Account] = []

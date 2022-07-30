@@ -8,31 +8,36 @@
 import UIKit
 
 class VerifycationViewController: UIViewController {
-
-    @IBOutlet weak var codeTF: UITextField!
-    @IBOutlet weak var helpLbl: UILabel!
+    @IBOutlet var codeTF: UITextField!
+    @IBOutlet var helpLbl: UILabel!
     
     var accountData: Account?
+    var code: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        code = createCode()
+        helpLbl.text = "We sent you special code \(code!) on your email \(accountData?.email ?? "(error email)")"
     }
+    
     @IBAction func codeCheck() {
-        if codeTF.text == "1" {
+        if codeTF.text == code {
+            guard let account = accountData else {
+                return
+            }
+            accountsDatabase.append(account)
             performSegue(withIdentifier: "GoToWelcomeVC", sender: nil)
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func createCode() -> String {
+        var code = ""
+        
+        for _ in 1...5 {
+            let randomInt = Int.random(in: 1...9)
+            code.append(String(randomInt))
+        }
+        
+        return code
     }
-    */
-
 }
