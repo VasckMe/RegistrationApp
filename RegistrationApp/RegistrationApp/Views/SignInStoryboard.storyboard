@@ -84,7 +84,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7rR-Eo-xTD">
                                         <rect key="frame" x="0.0" y="220" width="364" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJu-wn-EZi">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJu-wn-EZi">
                                                 <rect key="frame" x="65.5" y="0.0" width="233" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" systemColor="linkColor"/>
@@ -98,7 +98,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="signInButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SnL-RN-EK9"/>
+                                                    <action selector="signInButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8nP-ar-4fP"/>
+                                                    <segue destination="cUd-Ug-V5i" kind="show" id="o6a-Nu-H6T"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -132,6 +133,7 @@
                         <outlet property="emailTextField" destination="FUV-xH-HSk" id="uUD-7u-DDR"/>
                         <outlet property="passTextField" destination="3B3-Oo-Amm" id="dtB-DP-2G6"/>
                         <outlet property="showPassLbl" destination="L5e-S4-o9c" id="LwB-Gc-KTW"/>
+                        <outlet property="signInButtonOutlet" destination="zJu-wn-EZi" id="bKd-ad-7tB"/>
                         <outlet property="wrongEmailLbl" destination="r0b-lb-bu2" id="SxX-le-tlQ"/>
                         <outlet property="wrongPassLbl" destination="ZZC-O0-YGR" id="2gh-yK-OAW"/>
                     </connections>
@@ -139,6 +141,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="979.71014492753636" y="65.625"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="wxj-oK-Aep">
+            <objects>
+                <viewController id="YYn-z0-GKG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3S7-oj-Dok">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QMD-X0-fxW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Sm0-F2-hAl"/>
+                    <navigationItem key="navigationItem" id="iCw-bx-jvX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1D-Re-iRa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2828.985507246377" y="268.52678571428572"/>
         </scene>
         <!--SignUpStoryboard-->
         <scene sceneID="D4d-DN-kiU">
@@ -168,10 +187,31 @@
             </objects>
             <point key="canvasLocation" x="69.565217391304358" y="65.625"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dau-8g-C45">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cUd-Ug-V5i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="VvY-BP-1pK"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hg9-67-mxN">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="YYn-z0-GKG" kind="relationship" relationship="viewControllers" id="NbE-zY-nr5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tYk-Pv-tyy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918.840579710145" y="268.52678571428572"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

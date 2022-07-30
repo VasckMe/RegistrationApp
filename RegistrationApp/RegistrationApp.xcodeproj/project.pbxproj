@@ -86,10 +86,10 @@
 		182FAD522893E85F0062D3CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				182FAD442893E7360062D3CA /* Main.storyboard */,
 				182FAD492893E7370062D3CA /* LaunchScreen.storyboard */,
 				182FAD582893E8FF0062D3CA /* SignInStoryboard.storyboard */,
 				182FAD5A2893E90C0062D3CA /* SignUpStoryboard.storyboard */,
+				182FAD442893E7360062D3CA /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
