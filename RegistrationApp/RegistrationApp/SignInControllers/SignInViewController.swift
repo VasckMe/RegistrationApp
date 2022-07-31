@@ -62,8 +62,7 @@ class SignInViewController: UIViewController {
     
     
     @IBAction func unwindToRoot(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source
-        // Use data from the view controller which initiated the unwind segue
+        let _ = unwindSegue.source
     }
     
     //MARK: Functions
@@ -87,5 +86,14 @@ class SignInViewController: UIViewController {
             }
         }
         return false
+    }
+    private func indexOfUser() -> Int? {
+        for (id, user) in accountsDatabase.enumerated() {
+            if user.email == emailTextField.text,
+               user.password == passTextField.text {
+                return id
+            }
+        }
+        return nil
     }
 }
