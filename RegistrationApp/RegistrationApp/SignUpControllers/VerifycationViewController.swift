@@ -11,7 +11,7 @@ class VerifycationViewController: UIViewController {
     @IBOutlet var codeTF: UITextField!
     @IBOutlet var helpLbl: UILabel!
     
-    var accountData: Account?
+    var accountData: UserModel?
     var code: String?
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class VerifycationViewController: UIViewController {
             guard let account = accountData else {
                 return
             }
-            accountsDatabase.append(account)
+            usersDatabase.append(account)
             performSegue(withIdentifier: "GoToWelcomeVC", sender: nil)
         }
     }

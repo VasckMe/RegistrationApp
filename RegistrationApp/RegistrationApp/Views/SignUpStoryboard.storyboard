@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="99" width="414" height="763"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMz-QY-T5V">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="671.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="677"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Kmd-51-lXq">
-                                                <rect key="frame" x="25" y="25" width="364" height="646.5"/>
+                                                <rect key="frame" x="25" y="25" width="364" height="652"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9V-Ap-GsE">
                                                         <rect key="frame" x="0.0" y="0.0" width="364" height="41"/>
@@ -112,43 +112,43 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFo-ca-wQE">
-                                                        <rect key="frame" x="0.0" y="422.5" width="364" height="4.5"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sFo-ca-wQE">
+                                                        <rect key="frame" x="0.0" y="422.5" width="364" height="10"/>
                                                         <subviews>
                                                             <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2L-r3-G6E">
-                                                                <rect key="frame" x="0.0" y="0.0" width="91" height="4.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="10"/>
                                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="T2L-r3-G6E" secondAttribute="height" multiplier="20:1" id="gOP-MZ-b12"/>
+                                                                    <constraint firstAttribute="height" constant="10" id="ihE-ba-zNV"/>
                                                                 </constraints>
                                                             </view>
                                                             <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Eo-ua-THy">
-                                                                <rect key="frame" x="91" y="0.0" width="91" height="4.5"/>
+                                                                <rect key="frame" x="93.5" y="0.0" width="83.5" height="10"/>
                                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                             </view>
                                                             <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAe-OI-kmz">
-                                                                <rect key="frame" x="182" y="0.0" width="91" height="4.5"/>
+                                                                <rect key="frame" x="187" y="0.0" width="83.5" height="10"/>
                                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                             </view>
                                                             <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcP-Yv-Dfe">
-                                                                <rect key="frame" x="273" y="0.0" width="91" height="4.5"/>
+                                                                <rect key="frame" x="280.5" y="0.0" width="83.5" height="10"/>
                                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="8Eo-ua-THy" firstAttribute="width" secondItem="8Eo-ua-THy" secondAttribute="height" multiplier="20:1" id="B5K-ib-vIQ"/>
-                                                            <constraint firstItem="LAe-OI-kmz" firstAttribute="width" secondItem="LAe-OI-kmz" secondAttribute="height" multiplier="20:1" id="jdO-qn-u5n"/>
-                                                            <constraint firstItem="RcP-Yv-Dfe" firstAttribute="width" secondItem="RcP-Yv-Dfe" secondAttribute="height" multiplier="20:1" id="kmy-cI-JyO"/>
+                                                            <constraint firstItem="8Eo-ua-THy" firstAttribute="width" secondItem="LAe-OI-kmz" secondAttribute="width" id="90e-v9-9hT"/>
+                                                            <constraint firstItem="T2L-r3-G6E" firstAttribute="width" secondItem="8Eo-ua-THy" secondAttribute="width" id="MLI-uB-LZs"/>
+                                                            <constraint firstItem="LAe-OI-kmz" firstAttribute="width" secondItem="RcP-Yv-Dfe" secondAttribute="width" id="mFi-Ix-XX4"/>
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your password must be at least 8 characters and contain one capital letter, one lowercase letter and one number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yB4-WN-dqE">
-                                                        <rect key="frame" x="0.0" y="451" width="364" height="61"/>
+                                                        <rect key="frame" x="0.0" y="456.5" width="364" height="61"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EPj-ab-4FE">
-                                                        <rect key="frame" x="0.0" y="536" width="364" height="34"/>
+                                                        <rect key="frame" x="0.0" y="541.5" width="364" height="34"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kmc-o9-Dqp">
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="34"/>
@@ -166,8 +166,8 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcV-jJ-q0I">
-                                                        <rect key="frame" x="0.0" y="594" width="364" height="52.5"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcV-jJ-q0I">
+                                                        <rect key="frame" x="0.0" y="599.5" width="364" height="52.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Sign Up">
                                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="32"/>
@@ -224,14 +224,15 @@
                         <outlet property="confirmPassTF" destination="kmc-o9-Dqp" id="uaX-BL-Xs2"/>
                         <outlet property="emailTF" destination="Wy2-G1-cB3" id="h8B-hH-JTA"/>
                         <outlet property="nameTF" destination="Cj6-P8-yv3" id="pGi-0c-Fcx"/>
-                        <outlet property="passGreenView" destination="RcP-Yv-Dfe" id="iHt-Hl-dXq"/>
-                        <outlet property="passOrangeView" destination="8Eo-ua-THy" id="rbd-zh-NIi"/>
-                        <outlet property="passRedView" destination="T2L-r3-G6E" id="gAR-kd-M99"/>
-                        <outlet property="passYellowView" destination="LAe-OI-kmz" id="0nj-JF-h3A"/>
                         <outlet property="passwordTF" destination="inA-Ke-oGi" id="weD-5q-4uj"/>
+                        <outlet property="signUpButton" destination="lcV-jJ-q0I" id="WiY-vW-yfI"/>
                         <outlet property="wrongConfirmPassLbl" destination="97L-2t-pbu" id="9DH-tu-7eJ"/>
                         <outlet property="wrongEmailLbl" destination="96m-T3-vOB" id="yno-vO-hve"/>
                         <outlet property="wrongPassLbl" destination="l2G-Ma-0qq" id="sqt-bt-OqM"/>
+                        <outletCollection property="viewLights" destination="T2L-r3-G6E" collectionClass="NSMutableArray" id="4wg-bh-3Ll"/>
+                        <outletCollection property="viewLights" destination="8Eo-ua-THy" collectionClass="NSMutableArray" id="cRe-FJ-Y9G"/>
+                        <outletCollection property="viewLights" destination="LAe-OI-kmz" collectionClass="NSMutableArray" id="fYC-eU-HEq"/>
+                        <outletCollection property="viewLights" destination="RcP-Yv-Dfe" collectionClass="NSMutableArray" id="UoA-MD-irc"/>
                         <segue destination="Smg-cC-MIb" kind="presentation" identifier="GoToVerifyVC" id="F6f-ky-nJZ"/>
                     </connections>
                 </viewController>

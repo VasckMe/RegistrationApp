@@ -17,32 +17,36 @@ class SignUpViewController: UIViewController {
     @IBOutlet private var wrongPassLbl: UILabel!
     @IBOutlet private var confirmPassTF: UITextField!
     @IBOutlet private var wrongConfirmPassLbl: UILabel!
+    @IBOutlet private weak var signUpButton: UIButton!
+    @IBOutlet var viewLights: [UIView]!
     
-    @IBOutlet private var passRedView: UIView!
-    @IBOutlet private var passOrangeView: UIView!
-    @IBOutlet private var passYellowView: UIView!
-    @IBOutlet private var passGreenView: UIView!
-    
+    // MARK: Private properties
     private let isOn: CGFloat = 1
     private let isOff: CGFloat = 0.3
-
+    private var isValidEmail = false { didSet { updateSignUpButton() } }
+    private var passwordStrength: PasswordStrength = .veryWeak { didSet { updateSignUpButton() } }
+    private var isValidConfirmedPass = false { didSet { updateSignUpButton() } }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        clearPasswordLight()
     }
+    
     //MARK: IBActions
     @IBAction func emailCheck() {
-        wrongEmailLbl.isHidden = true
-        if !isValidEmailAddress(emailAddressString: emailTF.text) {
-            wrongEmailLbl.isHidden = false
+        if let email = emailTF.text,
+           !email.isEmpty {
+            isValidEmail = VerificationService.isValidEmailAddress(emailAddressString: email)
         }
+        wrongEmailLbl.isHidden = isValidEmail
     }
 
     @IBAction func passCheck() {
-        wrongPassLbl.isHidden = true
-        if !isValidPassword(password: passwordTF.text) {
-            wrongPassLbl.isHidden = false
+        if let password = passwordTF.text,
+           !password.isEmpty {
+            passwordStrength = VerificationService.isValidPassword(password: password)
+            setUpViewsLights(difficult: passwordStrength)
         }
+        wrongPassLbl.isHidden = passwordStrength != .veryWeak
     }
 
     @IBAction func showPasswordButton(_ sender: UIButton) {
@@ -57,10 +61,11 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func confirmPassCheck() {
-        wrongConfirmPassLbl.isHidden = true
-        if !isValidConfirmedPassword(confirmedPassword: confirmPassTF.text) {
-            wrongConfirmPassLbl.isHidden = false
+        if let password = passwordTF.text,
+           let confPassword = confirmPassTF.text {
+            isValidConfirmedPass = VerificationService.isPasswordConfirm(password: password, confirmedPassword: confPassword)
         }
+        wrongConfirmPassLbl.isHidden = isValidConfirmedPass
     }
     
     @IBAction func signIn() {
@@ -68,128 +73,37 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUp() {
-        if isValidEmailAddress(emailAddressString: emailTF.text),
-           isValidPassword(password: passwordTF.text),
-           isValidConfirmedPassword(confirmedPassword: confirmPassTF.text)
+        if let email = emailTF.text,
+           !email.isEmpty,
+           let password = passwordTF.text,
+           !password.isEmpty
         {
-            let account = Account(email: emailTF.text!, name: nameTF.text, password: passwordTF.text!)
-            performSegue(withIdentifier: "GoToVerifyVC", sender: account)
-        } else {
-            emailCheck()
-            passCheck()
-            confirmPassCheck()
+            let user = UserModel(email: email, name: nameTF.text, password: password)
+            performSegue(withIdentifier: "GoToVerifyVC", sender: user)
         }
     }
     
     //MARK: Private functions
-    private func isValidEmailAddress(emailAddressString: String?) -> Bool {
-        let emailAddress = emailAddressString ?? ""
-        var returnValue = true
-        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+    private func updateSignUpButton() {
+        signUpButton.isEnabled = isValidEmail && isValidConfirmedPass && passwordStrength !=
+            .veryWeak
+    }
         
-        do {
-            let regex = try NSRegularExpression(pattern: emailRegEx)
-            let nsString = emailAddress as NSString
-            let results = regex.matches(in: emailAddress, range: NSRange(location: 0, length: nsString.length))
-            
-            if results.count == 0 {
-                returnValue = false
+    private func setUpViewsLights(difficult stage: PasswordStrength) {
+        for (index, view) in viewLights.enumerated() {
+            if index <= passwordStrength.rawValue - 1 {
+                view.alpha = 1.0
+            } else {
+                view.alpha = 0.1
             }
-            
-        } catch let error as NSError {
-            print("invalid regex: \(error.localizedDescription)")
-            returnValue = false
         }
-        
-        return returnValue
-    }
-    
-    private func isValidPassword(password: String?) -> Bool {
-        let difficult = checkPasswordDifficult(password: password ?? "")
-        
-        clearPasswordLight()
-        switch difficult {
-        case .difficult:
-            passGreenView.alpha = isOn
-            fallthrough
-        case .medium:
-            passYellowView.alpha = isOn
-            fallthrough
-        case .easy:
-            passOrangeView.alpha = isOn
-            fallthrough
-        case .veryEasy:
-            passRedView.alpha = isOn
-        case .clear:
-            clearPasswordLight()
-        }
-        switch difficult {
-        case .clear:
-            wrongPassLbl.isHidden = false
-            return false
-        case .veryEasy:
-            wrongPassLbl.isHidden = false
-            return false
-        case .easy:
-            wrongPassLbl.isHidden = true
-            return true
-        case .medium:
-            return true
-        case .difficult:
-            return true
-        }
-    }
-
-    private func isValidConfirmedPassword(confirmedPassword: String?) -> Bool {
-        let confPassword = confirmedPassword ?? ""
-        if confPassword == passwordTF.text,
-           confPassword != ""
-        {
-            return true
-        } else { return false }
-    }
-    
-    private func checkPasswordDifficult(password: String) -> PasswordDifficulty {
-        var difficult: PasswordDifficulty
-        
-        switch password {
-        case _ where password.count >= 8 && password.contains(where: { char in
-            char.isLowercase
-        }) && password.contains(where: { char in
-            char.isUppercase
-        }) && password.contains(where: { char in
-            char.isNumber
-        }):
-            difficult = .difficult
-        case _ where password.count >= 8 && password.contains(where: { char in
-            char.isLowercase
-        }) && password.contains(where: { char in
-            char.isUppercase
-        }):
-            difficult = .medium
-        case _ where password.count >= 8:
-            difficult = .easy
-        case _ where password.count >= 1:
-            difficult = .veryEasy
-        default:
-            difficult = .clear
-        }
-        return difficult
-    }
-
-    private func clearPasswordLight() {
-        passRedView.alpha = isOff
-        passOrangeView.alpha = isOff
-        passYellowView.alpha = isOff
-        passGreenView.alpha = isOff
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let verifyVC = segue.destination as? VerifycationViewController,
-           let account = sender as? Account,
+           let user = sender as? UserModel,
            segue.identifier == "GoToVerifyVC" {
-            verifyVC.accountData = account
+            verifyVC.accountData = user
         }
     }
-    
 }

@@ -15,28 +15,37 @@ class SignInViewController: UIViewController {
     @IBOutlet private var passTextField: UITextField!
     @IBOutlet private var wrongPassLbl: UILabel!
     @IBOutlet private var showPassLbl: UIButton!
-
-    @IBOutlet weak var signInButtonOutlet: UIButton!
+    @IBOutlet private weak var signInButtonOutlet: UIButton!
+    
+    
+    //MARK: Private properties
+    private var isValidPassword = false
+    private var isValidEmail = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     //MARK: IBActions
     @IBAction func checkEmail() {
-        showError(showEmailError: false, showPassError: nil)
-        if isValidateUser() {
-            signInButtonOutlet.isEnabled = true
-        } else {
-            signInButtonOutlet.isEnabled = false
+        if let email = emailTextField.text,
+           !email.isEmpty {
+            isValidEmail = VerificationService.isValidEmailAddress(emailAddressString: email)
         }
+        wrongEmailLbl.isHidden = isValidEmail
     }
     @IBAction func checkPassword() {
-        showError(showEmailError: nil, showPassError: false)
-        if isValidateUser() {
-            signInButtonOutlet.isEnabled = true
-        } else {
-            signInButtonOutlet.isEnabled = false
+        if let password = passTextField.text,
+           !password.isEmpty,
+            let email = emailTextField.text,
+               !email.isEmpty {
+            usersDatabase.enumerated().forEach { (index, user) in
+                if user.email == email, user.password == password {
+                    isValidPassword = true
+                } else { isValidPassword = false }
+            }
         }
+        wrongPassLbl.isHidden = isValidPassword
     }
 
     @IBAction func showPassButton() {
@@ -66,31 +75,15 @@ class SignInViewController: UIViewController {
     }
     
     //MARK: Functions
-    private func showError(showEmailError email: Bool!, showPassError password: Bool!) {
-        if let emailBool = email { wrongEmailLbl.isHidden = !emailBool}
-        if let passBool = password { wrongPassLbl.isHidden = !passBool}
-    }
-    
-    private func isValidateUser() -> Bool {
-        for acc in accountsDatabase {
-            if acc.email != emailTextField.text {
-                showError(showEmailError: true, showPassError: true)
-                return false
-            } else if acc.password != passTextField.text {
-                showError(showEmailError: false, showPassError: true)
-                return false
-            } else {
-                showError(showEmailError: false, showPassError: false)
-                return true
-                
-            }
-        }
-        return false
+    private func isValidateUser() {
+        signInButtonOutlet.isEnabled = isValidPassword && isValidEmail
     }
     private func indexOfUser() -> Int? {
-        for (id, user) in accountsDatabase.enumerated() {
-            if user.email == emailTextField.text,
-               user.password == passTextField.text {
+        for (id, user) in usersDatabase.enumerated() {
+            if let email = emailTextField.text,
+               user.email == email,
+               let password = passTextField.text,
+               user.password == password {
                 return id
             }
         }

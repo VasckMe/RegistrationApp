@@ -1,13 +1,13 @@
 //
-//  Account.swift
+//  UserModel.swift
 //  RegistrationApp
 //
-//  Created by Apple Macbook Pro 13 on 29.07.22.
+//  Created by Apple Macbook Pro 13 on 2.08.22.
 //
 
 import Foundation
 
-struct Account {
+struct UserModel {
     let email: String
     let name: String?
     let password: String
