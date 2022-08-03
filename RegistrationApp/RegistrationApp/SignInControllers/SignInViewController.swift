@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+final class SignInViewController: UIViewController {
     
     //MARK: IBOutlets
     @IBOutlet private var emailTextField: UITextField!
@@ -24,6 +24,8 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let account = UserModel(email: "1@1.com", name: "popa", password: "qwerty123")
+        usersDatabase.append(account)
     }
 
     //MARK: IBActions
@@ -60,11 +62,13 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func signInButton() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainVC") as? MainViewController else { return }
-        if let index = indexOfUser() {
-            mainVC.userModel = usersDatabase[index]
-        }
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainVC") as? MainViewController else { return }
+//        if let index = indexOfUser() {
+//            mainVC.userModel = usersDatabase[index]
+//            navigationController?.pushViewController(mainTBC, animated: true)
+//        }
+        
     }
     
     

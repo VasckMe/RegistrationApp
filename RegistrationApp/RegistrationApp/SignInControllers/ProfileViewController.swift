@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  ProfileViewController.swift
 //  RegistrationApp
 //
 //  Created by Apple Macbook Pro 13 on 3.08.22.
@@ -7,14 +7,20 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class ProfileViewController: MainViewController {
 
-    var userModel: UserModel?
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var emailLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpUsersProfile()
     }
     
+    private func setUpUsersProfile() {
+        nameLbl.text = userModel?.name
+        emailLbl.text = userModel?.email
+    }
 
     /*
     // MARK: - Navigation

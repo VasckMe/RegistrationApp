@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
     
     @IBAction func continueButton(_ sender: Any) {
         performSegue(withIdentifier: "unwindToRoot", sender: nil)

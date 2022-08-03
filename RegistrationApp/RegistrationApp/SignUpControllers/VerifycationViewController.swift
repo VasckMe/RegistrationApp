@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VerifycationViewController: UIViewController {
+final class VerifycationViewController: UIViewController {
     @IBOutlet var codeTF: UITextField!
     @IBOutlet var helpLbl: UILabel!
     
