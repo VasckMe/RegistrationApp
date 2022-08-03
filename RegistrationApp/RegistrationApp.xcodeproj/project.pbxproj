@@ -74,6 +74,7 @@
 		182FAD3D2893E7360062D3CA /* RegistrationApp */ = {
 			isa = PBXGroup;
 			children = (
+				18836907289A6B3000B29898 /* New Group */,
 				18D45792289964DC002CAB63 /* Services */,
 				182FAD62289420B20062D3CA /* Models */,
 				182FAD542893E8770062D3CA /* SignInControllers */,
@@ -132,6 +133,13 @@
 				18D4579528996517002CAB63 /* UserDatabase.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		18836907289A6B3000B29898 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		18D45792289964DC002CAB63 /* Services */ = {
