@@ -62,13 +62,14 @@ final class SignInViewController: UIViewController {
     }
 
     @IBAction func signInButton() {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainVC") as? MainViewController else { return }
-//        if let index = indexOfUser() {
-//            mainVC.userModel = usersDatabase[index]
-//            navigationController?.pushViewController(mainTBC, animated: true)
-//        }
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let tabBarVC = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as? TabBarViewController else { return }
+        if let views = tabBarVC.viewControllers,
+           let profileVC = views[1] as? ProfileViewController,
+           let index = indexOfUser() {
+            profileVC.userModel = usersDatabase[index]
+        }
+        navigationController?.pushViewController(tabBarVC, animated: true)
     }
     
     
