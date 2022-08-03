@@ -19,8 +19,8 @@ class SignInViewController: UIViewController {
     
     
     //MARK: Private properties
-    private var isValidPassword = false
-    private var isValidEmail = false
+    private var isValidPassword = false { didSet {isValidateUser()}}
+    private var isValidEmail = false { didSet {isValidateUser()}}
     
     override func viewDidLoad() {
         super.viewDidLoad()
