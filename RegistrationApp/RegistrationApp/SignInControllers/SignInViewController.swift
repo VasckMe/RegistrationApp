@@ -60,13 +60,11 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func signInButton() {
-//        for acc in accountsDatabase {
-//            if acc.email != emailTextField.text {
-//                showError(showEmailError: true, showPassError: true)
-//            } else if acc.password != passTextField.text {
-//                showError(showEmailError: false, showPassError: true)
-//            } else { /*signing in*/}
-//        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainVC") as? MainViewController else { return }
+        if let index = indexOfUser() {
+            mainVC.userModel = usersDatabase[index]
+        }
     }
     
     
