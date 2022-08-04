@@ -10,17 +10,26 @@ import UIKit
 final class SignInViewController: UIViewController {
     
     //MARK: IBOutlets
-    @IBOutlet private var emailTextField: UITextField!
-    @IBOutlet private var wrongEmailLbl: UILabel!
-    @IBOutlet private var passTextField: UITextField!
-    @IBOutlet private var wrongPassLbl: UILabel!
-    @IBOutlet private var showPassLbl: UIButton!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var wrongEmailLabel: UILabel!
+    @IBOutlet private weak var passTextField: UITextField!
+    @IBOutlet private weak var wrongPassLabel: UILabel!
+    @IBOutlet private weak var showPassLabel: UIButton!
     @IBOutlet private weak var signInButtonOutlet: UIButton!
     
     
     //MARK: Private properties
-    private var isValidPassword = false { didSet {isValidateUser()}}
-    private var isValidEmail = false { didSet {isValidateUser()}}
+    private var isValidPassword = false {
+        didSet {
+            isValidateUser()
+        }
+    }
+
+    private var isValidEmail = false {
+        didSet {
+            isValidateUser()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,51 +38,70 @@ final class SignInViewController: UIViewController {
     }
 
     //MARK: IBActions
-    @IBAction func checkEmail() {
-        if let email = emailTextField.text,
-           !email.isEmpty {
+    @IBAction private func checkEmail() {
+        if
+            let email = emailTextField.text,
+            !email.isEmpty
+        {
             isValidEmail = VerificationService.isValidEmailAddress(emailAddressString: email)
         }
-        wrongEmailLbl.isHidden = isValidEmail
+        wrongEmailLabel.isHidden = isValidEmail
     }
-    @IBAction func checkPassword() {
-        if let password = passTextField.text,
-           !password.isEmpty,
+    @IBAction private func checkPassword() {
+        if
+            let password = passTextField.text,
+            !password.isEmpty,
             let email = emailTextField.text,
-               !email.isEmpty {
-            usersDatabase.enumerated().forEach { (index, user) in
-                if user.email == email, user.password == password {
+            !email.isEmpty
+        {
+            usersDatabase.enumerated().forEach { _, user in
+                if
+                    user.email == email, user.password == password
+                {
                     isValidPassword = true
-                } else { isValidPassword = false }
+                } else {
+                    isValidPassword = false
+                }
             }
         }
-        wrongPassLbl.isHidden = isValidPassword
+        wrongPassLabel.isHidden = isValidPassword
     }
 
-    @IBAction func showPassButton() {
-        switch passTextField.isSecureTextEntry {
-            case true:
-                showPassLbl.setTitle("hide password", for: .normal)
-                passTextField.isSecureTextEntry.toggle()
-            case false:
-                showPassLbl.setTitle("show password", for: .normal)
-                passTextField.isSecureTextEntry.toggle()
+    @IBAction private func showPassButton() {
+        if
+            passTextField.isSecureTextEntry
+        {
+            showPassLabel.setTitle("hide password", for: .normal)
+            passTextField.isSecureTextEntry.toggle()
+        } else {
+            showPassLabel.setTitle("show password", for: .normal)
+            passTextField.isSecureTextEntry.toggle()
         }
     }
 
-    @IBAction func signInButton() {
+    @IBAction private func signInButton() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let tabBarVC = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as? TabBarViewController else { return }
-        if let views = tabBarVC.viewControllers,
-           let profileVC = views[1] as? ProfileViewController,
-           let index = indexOfUser() {
-            profileVC.userModel = usersDatabase[index]
+        guard let tabBarVC =
+            storyboard.instantiateViewController(withIdentifier:
+                "TabBarVC") as? TabBarViewController else { return }
+        if
+            let views = tabBarVC.viewControllers,
+            let index = indexOfUser()
+        {
+            let user = usersDatabase[index]
+            for view in views {
+                if let mainVC = view as? MainViewController {
+                    mainVC.userModel = user
+                } else if let profileVC = view as? ProfileViewController {
+                    profileVC.userModel = user
+                }
+            }
         }
         navigationController?.pushViewController(tabBarVC, animated: true)
     }
     
     
-    @IBAction func unwindToRoot(_ unwindSegue: UIStoryboardSegue) {
+    @IBAction private func unwindToRoot(_ unwindSegue: UIStoryboardSegue) {
         let _ = unwindSegue.source
     }
     
@@ -83,10 +111,12 @@ final class SignInViewController: UIViewController {
     }
     private func indexOfUser() -> Int? {
         for (id, user) in usersDatabase.enumerated() {
-            if let email = emailTextField.text,
-               user.email == email,
-               let password = passTextField.text,
-               user.password == password {
+            if
+                let email = emailTextField.text,
+                user.email == email,
+                let password = passTextField.text,
+                user.password == password
+            {
                 return id
             }
         }

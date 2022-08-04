@@ -7,19 +7,22 @@
 
 import UIKit
 
-class ProfileViewController: MainViewController {
+final class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var nameLbl: UILabel!
-    @IBOutlet weak var emailLbl: UILabel!
+    var userModel: UserModel?
+    
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var emailLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUsersProfile()
+        print("view did load")
     }
     
     private func setUpUsersProfile() {
-        nameLbl.text = userModel?.name
-        emailLbl.text = userModel?.email
+        nameLabel.text = userModel?.name
+        emailLabel.text = userModel?.email
     }
 
     /*

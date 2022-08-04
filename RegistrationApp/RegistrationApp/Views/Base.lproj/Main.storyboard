@@ -71,8 +71,8 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person.fill" id="I6d-ML-0yF"/>
                     <navigationItem key="navigationItem" id="UuW-wa-do8"/>
                     <connections>
-                        <outlet property="emailLbl" destination="GIe-7J-lo4" id="lbt-sj-gtc"/>
-                        <outlet property="nameLbl" destination="7so-Et-XFo" id="SeI-k6-FWv"/>
+                        <outlet property="emailLabel" destination="GIe-7J-lo4" id="F4F-9k-nqI"/>
+                        <outlet property="nameLabel" destination="7so-Et-XFo" id="bXA-qA-dMp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4S-MM-ILs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -85,6 +85,7 @@
                 <tabBarController storyboardIdentifier="TabBarVC" automaticallyAdjustsScrollViewInsets="NO" id="0eh-vh-CZS" customClass="TabBarViewController" customModule="RegistrationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qo7-VA-ofe">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

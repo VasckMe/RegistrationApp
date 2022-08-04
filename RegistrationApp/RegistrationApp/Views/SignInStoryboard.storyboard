@@ -131,10 +131,10 @@
                     <connections>
                         <outlet property="emailTextField" destination="FUV-xH-HSk" id="uUD-7u-DDR"/>
                         <outlet property="passTextField" destination="3B3-Oo-Amm" id="dtB-DP-2G6"/>
-                        <outlet property="showPassLbl" destination="L5e-S4-o9c" id="LwB-Gc-KTW"/>
+                        <outlet property="showPassLabel" destination="L5e-S4-o9c" id="mRt-tW-nNF"/>
                         <outlet property="signInButtonOutlet" destination="zJu-wn-EZi" id="bKd-ad-7tB"/>
-                        <outlet property="wrongEmailLbl" destination="r0b-lb-bu2" id="SxX-le-tlQ"/>
-                        <outlet property="wrongPassLbl" destination="ZZC-O0-YGR" id="2gh-yK-OAW"/>
+                        <outlet property="wrongEmailLabel" destination="r0b-lb-bu2" id="JP5-Fk-qhZ"/>
+                        <outlet property="wrongPassLabel" destination="ZZC-O0-YGR" id="4lV-Vg-F0f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

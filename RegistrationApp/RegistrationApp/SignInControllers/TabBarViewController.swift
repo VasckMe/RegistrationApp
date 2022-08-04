@@ -7,21 +7,13 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+final class TabBarViewController: UITabBarController {
 
     var userModel: UserModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        test()
         // Do any additional setup after loading the view.
-    }
-    
-    func test() {
-        if let views = tabBarController?.viewControllers,
-           let profileVC = views[1] as? ProfileViewController {
-            profileVC.userModel = userModel
-        }
     }
     /*
     // MARK: - Navigation

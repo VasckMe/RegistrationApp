@@ -7,12 +7,13 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     var userModel: UserModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("MainVC did load")
     }
     
 

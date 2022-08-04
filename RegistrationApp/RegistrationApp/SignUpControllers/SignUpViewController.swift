@@ -10,13 +10,13 @@ import UIKit
 final class SignUpViewController: UIViewController {
     
     //MARK: Outlets
-    @IBOutlet private var emailTF: UITextField!
-    @IBOutlet private var wrongEmailLbl: UILabel!
-    @IBOutlet private var nameTF: UITextField!
-    @IBOutlet private var passwordTF: UITextField!
-    @IBOutlet private var wrongPassLbl: UILabel!
-    @IBOutlet private var confirmPassTF: UITextField!
-    @IBOutlet private var wrongConfirmPassLbl: UILabel!
+    @IBOutlet private weak var emailTF: UITextField!
+    @IBOutlet private weak var wrongEmailLbl: UILabel!
+    @IBOutlet private weak var nameTF: UITextField!
+    @IBOutlet private weak var passwordTF: UITextField!
+    @IBOutlet private weak var wrongPassLbl: UILabel!
+    @IBOutlet private weak var confirmPassTF: UITextField!
+    @IBOutlet private weak var wrongConfirmPassLbl: UILabel!
     @IBOutlet private weak var signUpButton: UIButton!
     @IBOutlet var viewLights: [UIView]!
     
@@ -32,7 +32,7 @@ final class SignUpViewController: UIViewController {
     }
     
     //MARK: IBActions
-    @IBAction func emailCheck() {
+    @IBAction private func emailCheck() {
         if let email = emailTF.text,
            !email.isEmpty {
             isValidEmail = VerificationService.isValidEmailAddress(emailAddressString: email)
@@ -40,7 +40,7 @@ final class SignUpViewController: UIViewController {
         wrongEmailLbl.isHidden = isValidEmail
     }
 
-    @IBAction func passCheck() {
+    @IBAction private func passCheck() {
         if let password = passwordTF.text,
            !password.isEmpty {
             passwordStrength = VerificationService.isValidPassword(password: password)
@@ -49,7 +49,7 @@ final class SignUpViewController: UIViewController {
         wrongPassLbl.isHidden = passwordStrength != .veryWeak
     }
 
-    @IBAction func showPasswordButton(_ sender: UIButton) {
+    @IBAction private func showPasswordButton(_ sender: UIButton) {
         switch passwordTF.isSecureTextEntry {
         case true:
             sender.setTitle("hide password", for: .normal)
@@ -60,7 +60,7 @@ final class SignUpViewController: UIViewController {
         }
     }
     
-    @IBAction func confirmPassCheck() {
+    @IBAction private func confirmPassCheck() {
         if let password = passwordTF.text,
            let confPassword = confirmPassTF.text {
             isValidConfirmedPass = VerificationService.isPasswordConfirm(password: password, confirmedPassword: confPassword)
@@ -68,11 +68,11 @@ final class SignUpViewController: UIViewController {
         wrongConfirmPassLbl.isHidden = isValidConfirmedPass
     }
     
-    @IBAction func signIn() {
+    @IBAction private func signIn() {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    @IBAction func signUp() {
+    @IBAction private func signUp() {
         if let email = emailTF.text,
            !email.isEmpty,
            let password = passwordTF.text,
