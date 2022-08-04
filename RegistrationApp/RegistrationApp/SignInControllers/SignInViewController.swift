@@ -48,20 +48,21 @@ final class SignInViewController: UIViewController {
         wrongEmailLabel.isHidden = isValidEmail
     }
     @IBAction private func checkPassword() {
-        if
+        guard
             let password = passTextField.text,
             !password.isEmpty,
             let email = emailTextField.text,
             !email.isEmpty
-        {
-            usersDatabase.enumerated().forEach { _, user in
-                if
-                    user.email == email, user.password == password
-                {
-                    isValidPassword = true
-                } else {
-                    isValidPassword = false
-                }
+        else {
+            return
+        }
+        usersDatabase.enumerated().forEach { _, user in
+            if
+                user.email == email, user.password == password
+            {
+                isValidPassword = true
+            } else {
+                isValidPassword = false
             }
         }
         wrongPassLabel.isHidden = isValidPassword
@@ -81,9 +82,13 @@ final class SignInViewController: UIViewController {
 
     @IBAction private func signInButton() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let tabBarVC =
-            storyboard.instantiateViewController(withIdentifier:
-                "TabBarVC") as? TabBarViewController else { return }
+        guard
+            let tabBarVC = storyboard.instantiateViewController(withIdentifier:
+                "TabBarVC") as? TabBarViewController
+        else {
+            return
+        }
+        
         if
             let views = tabBarVC.viewControllers,
             let index = indexOfUser()
