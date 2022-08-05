@@ -8,36 +8,35 @@
 import UIKit
 
 final class VerifycationViewController: UIViewController {
-    @IBOutlet var codeTF: UITextField!
-    @IBOutlet var helpLbl: UILabel!
+    @IBOutlet private weak var codeTextField: UITextField!
+    @IBOutlet private weak var wrongCodeLabel: UILabel!
+    @IBOutlet private weak var helpLabel: UILabel!
     
-    var accountData: UserModel?
-    var code: String?
+    var userModel: UserModel?
+    var code = Int.random(in: 100000...999999)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        code = createCode()
-        helpLbl.text = "We sent you special code \(code!) on your email \(accountData?.email ?? "(error email)")"
+        setupHelpLabel()
     }
     
-    @IBAction func codeCheck() {
-        if codeTF.text == code {
-            guard let account = accountData else {
-                return
-            }
-            usersDatabase.append(account)
-            performSegue(withIdentifier: "GoToWelcomeVC", sender: nil)
+    @IBAction private func codeCheck() {
+        
+        if
+            let codeText = codeTextField.text,
+            let codeInt = Int(codeText),
+            let user = userModel,
+            codeInt == code
+        {
+                usersDatabase.append(user)
+                performSegue(withIdentifier: "GoToWelcomeVC", sender: nil)
         }
+        wrongCodeLabel.isHidden = codeTextField.text?.count ?? 0 >= 6 ? false : true
     }
     
-    private func createCode() -> String {
-        var code = ""
-        
-        for _ in 1...5 {
-            let randomInt = Int.random(in: 1...9)
-            code.append(String(randomInt))
-        }
-        
-        return code
+    private func setupHelpLabel() {
+        let name = userModel?.name ?? "user"
+        let email = userModel?.email ?? "mail"
+        helpLabel.text = "Hello \(name) sent you special code \(code) on your email \(email)"
     }
 }

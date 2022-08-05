@@ -73,10 +73,11 @@ final class SignUpViewController: UIViewController {
     }
     
     @IBAction private func signUp() {
-        if let email = emailTF.text,
-           !email.isEmpty,
-           let password = passwordTF.text,
-           !password.isEmpty
+        if
+            let email = emailTF.text,
+            !email.isEmpty,
+            let password = passwordTF.text,
+            !password.isEmpty
         {
             let user = UserModel(email: email, name: nameTF.text, password: password)
             performSegue(withIdentifier: "GoToVerifyVC", sender: user)
@@ -103,7 +104,7 @@ final class SignUpViewController: UIViewController {
         if let verifyVC = segue.destination as? VerifycationViewController,
            let user = sender as? UserModel,
            segue.identifier == "GoToVerifyVC" {
-            verifyVC.accountData = user
+            verifyVC.userModel = user
         }
     }
 }

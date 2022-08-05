@@ -17,6 +17,7 @@ final class SignInViewController: UIViewController {
     @IBOutlet private weak var showPassLabel: UIButton!
     @IBOutlet private weak var signInButtonOutlet: UIButton!
     
+    var qqq: String?
     
     //MARK: Private properties
     private var isValidPassword = false {
@@ -35,6 +36,12 @@ final class SignInViewController: UIViewController {
         super.viewDidLoad()
         let account = UserModel(email: "1@1.com", name: "popa", password: "qwerty123")
         usersDatabase.append(account)
+        if let q = qqq,
+           !q.isEmpty {
+            print("empty")
+        } else {
+            print("not empty")
+        }
     }
 
     //MARK: IBActions
@@ -103,11 +110,6 @@ final class SignInViewController: UIViewController {
             }
         }
         navigationController?.pushViewController(tabBarVC, animated: true)
-    }
-    
-    
-    @IBAction private func unwindToRoot(_ unwindSegue: UIStoryboardSegue) {
-        let _ = unwindSegue.source
     }
     
     //MARK: Functions

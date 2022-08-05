@@ -10,6 +10,6 @@ import UIKit
 final class WelcomeViewController: UIViewController {
     
     @IBAction func continueButton(_ sender: Any) {
-        performSegue(withIdentifier: "unwindToRoot", sender: nil)
+        navigationController?.popToRootViewController(animated: true)
     }
 }
