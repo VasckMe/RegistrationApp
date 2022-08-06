@@ -8,8 +8,6 @@
 import UIKit
 
 final class ProfileViewController: UIViewController {
-
-    var userModel: UserModel?
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
@@ -17,22 +15,40 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUsersProfile()
-        print("view did load")
+    }
+
+    @IBAction func logoutButton() {
+        let confirmAction = UIAlertAction(title: "confirm", style: .default) {_ in
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        alertService(title: "Warning", message: "Are you sure to logout?", style: .alert, confirmAction: confirmAction)
+    }
+    @IBAction func deleteButton() {
+        let confirmAction = UIAlertAction(title: "confirm", style: .default) {_ in
+            UserDefaults.standard.reset()
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        alertService(title: "Warning", message: "Are you to delete this account?", style: .alert, confirmAction: confirmAction)
     }
     
+    // MARK: Private functions
+    
     private func setUpUsersProfile() {
-        nameLabel.text = userModel?.name
-        emailLabel.text = userModel?.email
+        if
+            let user = UserDefaultsService.getUserModel()
+        {
+            nameLabel.text = user.name
+            emailLabel.text = user.email
+        }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func alertService(title: String, message: String, style: UIAlertController.Style, confirmAction: UIAlertAction) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel)
+        
+        alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
+        
+        present(alert, animated: true)
     }
-    */
-
 }

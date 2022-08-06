@@ -28,8 +28,8 @@ final class VerifycationViewController: UIViewController {
             let user = userModel,
             codeInt == code
         {
-                usersDatabase.append(user)
-                performSegue(withIdentifier: "GoToWelcomeVC", sender: nil)
+            UserDefaultsService.saveUserModel(userModel: user)
+            performSegue(withIdentifier: "GoToWelcomeVC", sender: nil)
         }
         wrongCodeLabel.isHidden = codeTextField.text?.count ?? 0 >= 6 ? false : true
     }

@@ -135,6 +135,7 @@
                         <outlet property="signInButtonOutlet" destination="zJu-wn-EZi" id="bKd-ad-7tB"/>
                         <outlet property="wrongEmailLabel" destination="r0b-lb-bu2" id="JP5-Fk-qhZ"/>
                         <outlet property="wrongPassLabel" destination="ZZC-O0-YGR" id="4lV-Vg-F0f"/>
+                        <segue destination="ESF-dH-qHL" kind="show" identifier="GoToMainVC" id="vLp-8k-VaQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
