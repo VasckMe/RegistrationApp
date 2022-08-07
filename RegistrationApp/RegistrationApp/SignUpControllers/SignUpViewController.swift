@@ -18,6 +18,7 @@ final class SignUpViewController: UIViewController {
     @IBOutlet private weak var confirmPassTF: UITextField!
     @IBOutlet private weak var wrongConfirmPassLbl: UILabel!
     @IBOutlet private weak var signUpButton: UIButton!
+    @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet var viewLights: [UIView]!
     
     // MARK: Private properties
@@ -41,6 +42,8 @@ final class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
+        startKeyboardObserver()
     }
     
     //MARK: IBActions
@@ -112,6 +115,29 @@ final class SignUpViewController: UIViewController {
         }
     }
     
+    private func startKeyboardObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    @objc private func keyboardWillHide() {
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    //MARK: Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let verifyVC = segue.destination as? VerifycationViewController,
            let user = sender as? UserModel,

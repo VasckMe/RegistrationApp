@@ -19,6 +19,7 @@
 		182FAD5F2893F98B0062D3CA /* VerifycationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD5E2893F98B0062D3CA /* VerifycationViewController.swift */; };
 		182FAD61289403B10062D3CA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD60289403B10062D3CA /* WelcomeViewController.swift */; };
 		183E9F5428A0120400299720 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E9F5328A0120400299720 /* AlertService.swift */; };
+		183E9F5628A0284E00299720 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E9F5528A0284E00299720 /* UIViewControllerExtension.swift */; };
 		1871F4E8289EEEBA007641B1 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871F4E7289EEEBA007641B1 /* UserDefaultsService.swift */; };
 		1871F4EB289EEEE8007641B1 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871F4EA289EEEE8007641B1 /* UserDefaultsExtension.swift */; };
 		1883690A289A703700B29898 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18836909289A703700B29898 /* MainViewController.swift */; };
@@ -44,6 +45,7 @@
 		182FAD5E2893F98B0062D3CA /* VerifycationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifycationViewController.swift; sourceTree = "<group>"; };
 		182FAD60289403B10062D3CA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		183E9F5328A0120400299720 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		183E9F5528A0284E00299720 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1871F4E7289EEEBA007641B1 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		1871F4EA289EEEE8007641B1 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		18836909289A703700B29898 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				1871F4EA289EEEE8007641B1 /* UserDefaultsExtension.swift */,
+				183E9F5528A0284E00299720 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				1883690A289A703700B29898 /* MainViewController.swift in Sources */,
 				182FAD5F2893F98B0062D3CA /* VerifycationViewController.swift in Sources */,
 				182FAD412893E7360062D3CA /* SceneDelegate.swift in Sources */,
+				183E9F5628A0284E00299720 /* UIViewControllerExtension.swift in Sources */,
 				18D4579A28997503002CAB63 /* VerificationService.swift in Sources */,
 				183E9F5428A0120400299720 /* AlertService.swift in Sources */,
 				1883690C289A769800B29898 /* ProfileViewController.swift in Sources */,

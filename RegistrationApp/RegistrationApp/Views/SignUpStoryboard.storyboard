@@ -225,6 +225,7 @@
                         <outlet property="emailTF" destination="Wy2-G1-cB3" id="h8B-hH-JTA"/>
                         <outlet property="nameTF" destination="Cj6-P8-yv3" id="pGi-0c-Fcx"/>
                         <outlet property="passwordTF" destination="inA-Ke-oGi" id="weD-5q-4uj"/>
+                        <outlet property="scrollView" destination="qeI-de-Svv" id="wVy-lV-iOa"/>
                         <outlet property="signUpButton" destination="lcV-jJ-q0I" id="WiY-vW-yfI"/>
                         <outlet property="wrongConfirmPassLbl" destination="97L-2t-pbu" id="9DH-tu-7eJ"/>
                         <outlet property="wrongEmailLbl" destination="96m-T3-vOB" id="yno-vO-hve"/>
