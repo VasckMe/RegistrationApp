@@ -88,7 +88,7 @@ final class SignInViewController: UIViewController {
     }
     
     private func isUserLogged() {
-        if let user = UserDefaultsService.getUserModel() {
+        if UserDefaultsService.getUserModel() != nil {
             performSegue(withIdentifier: "GoToMainVC", sender: nil)
         }
     }

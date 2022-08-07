@@ -20,9 +20,9 @@
 		182FAD61289403B10062D3CA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD60289403B10062D3CA /* WelcomeViewController.swift */; };
 		1871F4E8289EEEBA007641B1 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871F4E7289EEEBA007641B1 /* UserDefaultsService.swift */; };
 		1871F4EB289EEEE8007641B1 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871F4EA289EEEE8007641B1 /* UserDefaultsExtension.swift */; };
-		1871F4ED289EFA96007641B1 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871F4EC289EFA96007641B1 /* EditProfileViewController.swift */; };
 		1883690A289A703700B29898 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18836909289A703700B29898 /* MainViewController.swift */; };
 		1883690C289A769800B29898 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883690B289A769800B29898 /* ProfileViewController.swift */; };
+		18C09CD8289F100300D6AB65 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C09CD7289F100300D6AB65 /* EditViewController.swift */; };
 		18D4579128996486002CAB63 /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4579028996486002CAB63 /* PasswordStrength.swift */; };
 		18D4579428996501002CAB63 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4579328996501002CAB63 /* UserModel.swift */; };
 		18D4579A28997503002CAB63 /* VerificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4579928997503002CAB63 /* VerificationService.swift */; };
@@ -44,9 +44,9 @@
 		182FAD60289403B10062D3CA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1871F4E7289EEEBA007641B1 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		1871F4EA289EEEE8007641B1 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
-		1871F4EC289EFA96007641B1 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		18836909289A703700B29898 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1883690B289A769800B29898 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		18C09CD7289F100300D6AB65 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		18D4579028996486002CAB63 /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
 		18D4579328996501002CAB63 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		18D4579928997503002CAB63 /* VerificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationService.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 				182FAD562893E8E40062D3CA /* SignInViewController.swift */,
 				18836909289A703700B29898 /* MainViewController.swift */,
 				1883690B289A769800B29898 /* ProfileViewController.swift */,
-				1871F4EC289EFA96007641B1 /* EditProfileViewController.swift */,
+				18C09CD7289F100300D6AB65 /* EditViewController.swift */,
 			);
 			path = SignInControllers;
 			sourceTree = "<group>";
@@ -241,7 +241,7 @@
 				182FAD412893E7360062D3CA /* SceneDelegate.swift in Sources */,
 				18D4579A28997503002CAB63 /* VerificationService.swift in Sources */,
 				1883690C289A769800B29898 /* ProfileViewController.swift in Sources */,
-				1871F4ED289EFA96007641B1 /* EditProfileViewController.swift in Sources */,
+				18C09CD8289F100300D6AB65 /* EditViewController.swift in Sources */,
 				182FAD61289403B10062D3CA /* WelcomeViewController.swift in Sources */,
 				1871F4E8289EEEBA007641B1 /* UserDefaultsService.swift in Sources */,
 				182FAD5D2893E9430062D3CA /* SignUpViewController.swift in Sources */,
