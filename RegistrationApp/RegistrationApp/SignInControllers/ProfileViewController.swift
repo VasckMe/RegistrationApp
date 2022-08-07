@@ -9,6 +9,8 @@ import UIKit
 
 final class ProfileViewController: UIViewController {
     
+    // MARK: IBOutlets
+    
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
     
@@ -17,6 +19,7 @@ final class ProfileViewController: UIViewController {
         setUpUsersProfile()
     }
 
+    // MARK: IBActions
     @IBAction func logoutButton() {
         let confirmAction = UIAlertAction(title: "confirm", style: .default) {_ in
             self.navigationController?.popToRootViewController(animated: true)
@@ -24,14 +27,14 @@ final class ProfileViewController: UIViewController {
         alertService(title: "Warning", message: "Are you sure to logout?", style: .alert, confirmAction: confirmAction)
     }
     @IBAction func deleteButton() {
-        let confirmAction = UIAlertAction(title: "confirm", style: .default) {_ in
+        let confirmAction = UIAlertAction(title: "confirm", style: .default) { _ in
             UserDefaults.standard.reset()
             self.navigationController?.popToRootViewController(animated: true)
         }
         alertService(title: "Warning", message: "Are you to delete this account?", style: .alert, confirmAction: confirmAction)
     }
     
-    // MARK: Private functions
+    // MARK: Functions
     
     private func setUpUsersProfile() {
         if
@@ -42,7 +45,10 @@ final class ProfileViewController: UIViewController {
         }
     }
     
-    private func alertService(title: String, message: String, style: UIAlertController.Style, confirmAction: UIAlertAction) {
+    private func alertService(title: String,
+                              message: String,
+                              style: UIAlertController.Style,
+                              confirmAction: UIAlertAction) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         let cancelAction = UIAlertAction(title: "cancel", style: .cancel)
         

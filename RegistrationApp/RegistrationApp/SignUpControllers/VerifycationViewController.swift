@@ -8,20 +8,25 @@
 import UIKit
 
 final class VerifycationViewController: UIViewController {
-    @IBOutlet private weak var codeTextField: UITextField!
-    @IBOutlet private weak var wrongCodeLabel: UILabel!
-    @IBOutlet private weak var helpLabel: UILabel!
-    
+    // MARK: IBOutlets
+
+    @IBOutlet private var codeTextField: UITextField!
+    @IBOutlet private var wrongCodeLabel: UILabel!
+    @IBOutlet private var helpLabel: UILabel!
+
+    // MARK: Properties
+
     var userModel: UserModel?
-    var code = Int.random(in: 100000...999999)
-    
+    var code = Int.random(in: 100000 ... 999999)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHelpLabel()
     }
-    
+
+    // MARK: IBActions
+
     @IBAction private func codeCheck() {
-        
         if
             let codeText = codeTextField.text,
             let codeInt = Int(codeText),
@@ -33,7 +38,9 @@ final class VerifycationViewController: UIViewController {
         }
         wrongCodeLabel.isHidden = codeTextField.text?.count ?? 0 >= 6 ? false : true
     }
-    
+
+    // MARK: Functions
+
     private func setupHelpLabel() {
         let name = userModel?.name ?? "user"
         let email = userModel?.email ?? "mail"

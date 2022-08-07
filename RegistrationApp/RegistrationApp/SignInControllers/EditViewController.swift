@@ -9,6 +9,7 @@ import UIKit
 
 class EditViewController: UIViewController {
 
+    // MARK: IBOutlets
     @IBOutlet private weak var nameTextField: UITextField!
     
     @IBOutlet private weak var emailTextField: UITextField!
@@ -22,13 +23,14 @@ class EditViewController: UIViewController {
     
     @IBOutlet private weak var saveButtonOutlet: UIButton!
     
+    // MARK: Properties
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fillUserData()
-        // Do any additional setup after loading the view.
     }
     
+    // MARK: IBActions
     @IBAction private func showPasswordButton(_ sender: UIButton) {
         if
             passwordTextField.isSecureTextEntry,
@@ -46,6 +48,8 @@ class EditViewController: UIViewController {
     
     @IBAction private func saveButtonAction() {
     }
+    
+    // MARK: Functions
     private func fillUserData() {
         if
             let user = UserDefaultsService.getUserModel()
@@ -56,14 +60,4 @@ class EditViewController: UIViewController {
             confirmPasswordTextField.text = user.password
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
