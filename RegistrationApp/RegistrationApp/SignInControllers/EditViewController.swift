@@ -84,18 +84,15 @@ class EditViewController: UIViewController {
         wrongConfPassLabel.isHidden = isValidConfPassword
     }
     
-    
-    
-    
-    
     @IBAction private func showPasswordButton(_ sender: UIButton) {
         if
             passwordTextField.isSecureTextEntry,
             confirmPasswordTextField.isSecureTextEntry
         {
-            sender.setTitle("hide password", for: .normal)
-            passwordTextField.isSecureTextEntry.toggle()
-            confirmPasswordTextField.isSecureTextEntry.toggle()
+            miniAlertService(title: "Access",
+                             message: "Confirm password",
+                             style: .alert,
+                             sender: sender)
         } else {
             sender.setTitle("show password", for: .normal)
             passwordTextField.isSecureTextEntry.toggle()
@@ -110,7 +107,6 @@ class EditViewController: UIViewController {
                                    password: passwordTextField.text!)
         UserDefaultsService.saveUserModel(userModel: editedUser)
         navigationController?.popViewController(animated: true)
-        
     }
     
     // MARK: Functions
@@ -125,7 +121,6 @@ class EditViewController: UIViewController {
         }
     }
     private func checkEditedUser() {
-        
         let user = UserDefaultsService.getUserModel()
         let editedUser = UserModel(email: emailTextField.text!,
                                    name: nameTextField.text,
@@ -141,4 +136,30 @@ class EditViewController: UIViewController {
             saveButtonOutlet.isEnabled = false
         }
     }
+    private func miniAlertService(title: String,
+                                  message: String,
+                                  style: UIAlertController.Style,
+                                  sender: UIButton){
+    let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        
+    alert.addTextField { text in
+        text.isSecureTextEntry = true
+    }
+        
+    let cancelAction = UIAlertAction(title: "cancel", style: .cancel)
+    let confirmAction = UIAlertAction(title: "confirm", style: .default) { _ in
+        let text = alert.textFields?.first?.text
+        let password = UserDefaultsService.getUserModel()?.password
+        if text == password {
+            sender.setTitle("hide password", for: .normal)
+            self.passwordTextField.isSecureTextEntry.toggle()
+            self.confirmPasswordTextField.isSecureTextEntry.toggle()
+        }
+    }
+        
+    alert.addAction(cancelAction)
+    alert.addAction(confirmAction)
+        
+    present(alert, animated: true)
+}
 }

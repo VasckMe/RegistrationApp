@@ -18,6 +18,8 @@
 		182FAD5D2893E9430062D3CA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD5C2893E9430062D3CA /* SignUpViewController.swift */; };
 		182FAD5F2893F98B0062D3CA /* VerifycationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD5E2893F98B0062D3CA /* VerifycationViewController.swift */; };
 		182FAD61289403B10062D3CA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FAD60289403B10062D3CA /* WelcomeViewController.swift */; };
+		183E9F5228A0114500299720 /* NavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E9F5128A0114500299720 /* NavigationControllerExtension.swift */; };
+		183E9F5428A0120400299720 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E9F5328A0120400299720 /* AlertService.swift */; };
 		1871F4E8289EEEBA007641B1 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871F4E7289EEEBA007641B1 /* UserDefaultsService.swift */; };
 		1871F4EB289EEEE8007641B1 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871F4EA289EEEE8007641B1 /* UserDefaultsExtension.swift */; };
 		1883690A289A703700B29898 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18836909289A703700B29898 /* MainViewController.swift */; };
@@ -42,6 +44,8 @@
 		182FAD5C2893E9430062D3CA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		182FAD5E2893F98B0062D3CA /* VerifycationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifycationViewController.swift; sourceTree = "<group>"; };
 		182FAD60289403B10062D3CA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		183E9F5128A0114500299720 /* NavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerExtension.swift; sourceTree = "<group>"; };
+		183E9F5328A0120400299720 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		1871F4E7289EEEBA007641B1 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		1871F4EA289EEEE8007641B1 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		18836909289A703700B29898 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				1871F4EA289EEEE8007641B1 /* UserDefaultsExtension.swift */,
+				183E9F5128A0114500299720 /* NavigationControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 			children = (
 				18D4579928997503002CAB63 /* VerificationService.swift */,
 				1871F4E7289EEEBA007641B1 /* UserDefaultsService.swift */,
+				183E9F5328A0120400299720 /* AlertService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -236,10 +242,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				182FAD3F2893E7360062D3CA /* AppDelegate.swift in Sources */,
+				183E9F5228A0114500299720 /* NavigationControllerExtension.swift in Sources */,
 				1883690A289A703700B29898 /* MainViewController.swift in Sources */,
 				182FAD5F2893F98B0062D3CA /* VerifycationViewController.swift in Sources */,
 				182FAD412893E7360062D3CA /* SceneDelegate.swift in Sources */,
 				18D4579A28997503002CAB63 /* VerificationService.swift in Sources */,
+				183E9F5428A0120400299720 /* AlertService.swift in Sources */,
 				1883690C289A769800B29898 /* ProfileViewController.swift in Sources */,
 				18C09CD8289F100300D6AB65 /* EditViewController.swift in Sources */,
 				182FAD61289403B10062D3CA /* WelcomeViewController.swift in Sources */,

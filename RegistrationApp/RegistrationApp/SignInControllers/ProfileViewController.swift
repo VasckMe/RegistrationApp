@@ -25,17 +25,16 @@ final class ProfileViewController: UIViewController {
 
     // MARK: IBActions
     @IBAction func logoutButton() {
-        let confirmAction = UIAlertAction(title: "confirm", style: .default) {_ in
-            self.navigationController?.popToRootViewController(animated: true)
-        }
-        alertService(title: "Warning", message: "Are you sure to logout?", style: .alert, confirmAction: confirmAction)
+        AlertService.logoutAction(view: self,
+                                  title: "Warning!",
+                                  message: "Are you sure to logout?",
+                                  style: .alert)
     }
     @IBAction func deleteButton() {
-        let confirmAction = UIAlertAction(title: "confirm", style: .default) { _ in
-            UserDefaults.standard.reset()
-            self.navigationController?.popToRootViewController(animated: true)
-        }
-        alertService(title: "Warning", message: "Are you to delete this account?", style: .alert, confirmAction: confirmAction)
+        AlertService.deleteAction(view: self,
+                                  title: "Warning",
+                                  message: "Are you to delete this account?",
+                                  style: .alert)
     }
     
     // MARK: Functions
@@ -47,18 +46,5 @@ final class ProfileViewController: UIViewController {
             nameLabel.text = user.name
             emailLabel.text = user.email
         }
-    }
-    
-    private func alertService(title: String,
-                              message: String,
-                              style: UIAlertController.Style,
-                              confirmAction: UIAlertAction) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        let cancelAction = UIAlertAction(title: "cancel", style: .cancel)
-        
-        alert.addAction(cancelAction)
-        alert.addAction(confirmAction)
-        
-        present(alert, animated: true)
     }
 }
