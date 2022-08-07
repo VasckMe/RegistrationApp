@@ -23,9 +23,21 @@ final class SignUpViewController: UIViewController {
     // MARK: Private properties
     private let isOn: CGFloat = 1
     private let isOff: CGFloat = 0.3
-    private var isValidEmail = false { didSet { updateSignUpButton() } }
-    private var passwordStrength: PasswordStrength = .veryWeak { didSet { updateSignUpButton() } }
-    private var isValidConfirmedPass = false { didSet { updateSignUpButton() } }
+    private var isValidEmail = false {
+        didSet {
+            updateSignUpButton()
+        }
+    }
+    private var passwordStrength: PasswordStrength = .veryWeak {
+        didSet {
+            updateSignUpButton()
+        }
+    }
+    private var isValidConfirmedPass = false {
+        didSet {
+            updateSignUpButton()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

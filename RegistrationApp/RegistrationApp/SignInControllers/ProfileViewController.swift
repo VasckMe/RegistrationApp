@@ -14,6 +14,10 @@ final class ProfileViewController: UIViewController {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
     
+    override func viewWillAppear(_ animated: Bool) {
+        setUpUsersProfile()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUsersProfile()

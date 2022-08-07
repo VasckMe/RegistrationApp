@@ -180,6 +180,9 @@
                                                         <rect key="frame" x="0.0" y="394" width="364" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="nameAction" destination="C1e-Gg-VCt" eventType="editingChanged" id="wUy-dX-KF8"/>
+                                                        </connections>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DPM-l3-tkE">
                                                         <rect key="frame" x="0.0" y="458" width="364" height="34"/>
@@ -188,6 +191,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                                <connections>
+                                                                    <action selector="emailAction" destination="C1e-Gg-VCt" eventType="editingChanged" id="1mP-gi-934"/>
+                                                                </connections>
                                                             </textField>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4E-Rf-J2F">
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="0.0"/>
@@ -204,6 +210,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                                <connections>
+                                                                    <action selector="passwordAction" destination="C1e-Gg-VCt" eventType="editingChanged" id="rVA-RB-Kaa"/>
+                                                                </connections>
                                                             </textField>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="NPe-WY-hYN">
                                                                 <rect key="frame" x="0.0" y="39" width="364" height="31"/>
@@ -238,6 +247,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                                <connections>
+                                                                    <action selector="confPasswordAction" destination="C1e-Gg-VCt" eventType="editingChanged" id="WiW-9c-Yea"/>
+                                                                </connections>
                                                             </textField>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong confirmed password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hyr-1B-gQL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="0.0"/>
