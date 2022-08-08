@@ -8,31 +8,43 @@
 import UIKit
 
 final class ProfileViewController: UIViewController {
-
-    var userModel: UserModel?
+    
+    // MARK: IBOutlets
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
     
+    override func viewWillAppear(_ animated: Bool) {
+        setUpUsersProfile()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUsersProfile()
-        print("view did load")
+    }
+
+    // MARK: IBActions
+    @IBAction func logoutButton() {
+        AlertService.logoutAction(view: self,
+                                  title: "Warning!",
+                                  message: "Are you sure to logout?",
+                                  style: .alert)
+    }
+    @IBAction func deleteButton() {
+        AlertService.deleteAction(view: self,
+                                  title: "Warning",
+                                  message: "Are you to delete this account?",
+                                  style: .alert)
     }
     
+    // MARK: Functions
+    
     private func setUpUsersProfile() {
-        nameLabel.text = userModel?.name
-        emailLabel.text = userModel?.email
+        if
+            let user = UserDefaultsService.getUserModel()
+        {
+            nameLabel.text = user.name
+            emailLabel.text = user.email
+        }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

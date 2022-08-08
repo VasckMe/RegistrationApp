@@ -17,7 +17,6 @@ final class SignInViewController: UIViewController {
     @IBOutlet private weak var showPassLabel: UIButton!
     @IBOutlet private weak var signInButtonOutlet: UIButton!
     
-    
     //MARK: Private properties
     private var isValidPassword = false {
         didSet {
@@ -33,8 +32,7 @@ final class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let account = UserModel(email: "1@1.com", name: "popa", password: "qwerty123")
-        usersDatabase.append(account)
+        isUserLogged()
     }
 
     //MARK: IBActions
@@ -56,15 +54,15 @@ final class SignInViewController: UIViewController {
         else {
             return
         }
-        usersDatabase.enumerated().forEach { _, user in
             if
-                user.email == email, user.password == password
+                let user = UserDefaultsService.getUserModel(),
+                user.password == password,
+                user.email == email
             {
                 isValidPassword = true
             } else {
                 isValidPassword = false
             }
-        }
         wrongPassLabel.isHidden = isValidPassword
     }
 
@@ -81,50 +79,20 @@ final class SignInViewController: UIViewController {
     }
 
     @IBAction private func signInButton() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard
-            let tabBarVC = storyboard.instantiateViewController(withIdentifier:
-                "TabBarVC") as? TabBarViewController
-        else {
-            return
-        }
-        
-        if
-            let views = tabBarVC.viewControllers,
-            let index = indexOfUser()
-        {
-            let user = usersDatabase[index]
-            for view in views {
-                if let mainVC = view as? MainViewController {
-                    mainVC.userModel = user
-                } else if let profileVC = view as? ProfileViewController {
-                    profileVC.userModel = user
-                }
-            }
-        }
-        navigationController?.pushViewController(tabBarVC, animated: true)
-    }
-    
-    
-    @IBAction private func unwindToRoot(_ unwindSegue: UIStoryboardSegue) {
-        let _ = unwindSegue.source
+        performSegue(withIdentifier: "GoToMainVC", sender: nil)
     }
     
     //MARK: Functions
     private func isValidateUser() {
         signInButtonOutlet.isEnabled = isValidPassword && isValidEmail
     }
-    private func indexOfUser() -> Int? {
-        for (id, user) in usersDatabase.enumerated() {
-            if
-                let email = emailTextField.text,
-                user.email == email,
-                let password = passTextField.text,
-                user.password == password
-            {
-                return id
-            }
+    
+    private func isUserLogged() {
+        let user = UserDefaultsService.getUserModel()
+        print(user)
+        if UserDefaultsService.getUserModel() != nil {
+            performSegue(withIdentifier: "GoToMainVC", sender: nil)
         }
-        return nil
     }
 }
+
