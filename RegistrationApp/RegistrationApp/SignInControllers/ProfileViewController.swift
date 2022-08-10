@@ -7,16 +7,16 @@
 
 import UIKit
 
+protocol EditingUserData {
+    func fetchUserData(userModel: UserModel)
+}
+
 final class ProfileViewController: UIViewController {
     
     // MARK: IBOutlets
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setUpUsersProfile()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,9 @@ final class ProfileViewController: UIViewController {
                                   message: "Are you to delete this account?",
                                   style: .alert)
     }
+    @IBAction func editButtonAction() {
+        performSegue(withIdentifier: "GoToEditVC", sender: nil)
+    }
     
     // MARK: Functions
     
@@ -47,4 +50,21 @@ final class ProfileViewController: UIViewController {
             emailLabel.text = user.email
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let editVC = segue.destination as? EditViewController,
+           segue.identifier == "GoToEditVC" {
+            editVC.delegate = self
+        }
+    }
+    
+}
+
+extension ProfileViewController: EditingUserData {
+    func fetchUserData(userModel: UserModel) {
+        nameLabel.text = userModel.name
+        emailLabel.text = userModel.email
+    }
+    
+    
 }

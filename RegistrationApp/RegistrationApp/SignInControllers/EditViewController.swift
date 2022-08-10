@@ -25,6 +25,8 @@ class EditViewController: UIViewController {
     
     // MARK: Properties
     
+    var delegate: EditingUserData?
+    
     private var isValidEmail = true {
         didSet {
             checkEditedUser()
@@ -106,6 +108,7 @@ class EditViewController: UIViewController {
                                    name: nameTextField.text,
                                    password: passwordTextField.text!)
         UserDefaultsService.saveUserModel(userModel: editedUser)
+        delegate?.fetchUserData(userModel: editedUser)
         navigationController?.popViewController(animated: true)
     }
     

@@ -47,7 +47,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="C1e-Gg-VCt" kind="show" id="UE2-e8-smB"/>
+                                    <action selector="editButtonAction" destination="4Ra-we-Xwh" eventType="touchUpInside" id="Gmx-56-vUE"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="xAi-CO-TpO">
@@ -111,6 +111,7 @@
                     <connections>
                         <outlet property="emailLabel" destination="5TX-cH-524" id="wVL-7Y-bdR"/>
                         <outlet property="nameLabel" destination="2VN-WL-XOm" id="gTM-tD-lK8"/>
+                        <segue destination="C1e-Gg-VCt" kind="show" identifier="GoToEditVC" id="C9y-8p-T14"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4S-MM-ILs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
